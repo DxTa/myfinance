@@ -1,0 +1,30 @@
+.wrapper {
+  height: 100%;
+  /* position: relative; */
+  /* left: 50%; */
+  /* width: 1000px; */
+  /* height: 800px; */
+  /* -webkit-transform: translate(-50%, 0); */
+  /* transform: translate(-50%, 0); */
+}
+
+
+.container {
+  width: 100%;
+  margin-top: 50px;
+  border-top: 1px solid gray;
+  height: calc(100vh - 51px);
+  /* height: 100vh; */
+  /* position: relative; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* width: 80%; */
+  /* height: 75%; */
+  background-color: #dedede;
+  /* -webkit-transform: translate(-50%, -50%); */
+  /* transform: translate(-50%, -50%); */
+}
+
+.app {
+  font-family: 'Roboto', sans-serif;
+}
