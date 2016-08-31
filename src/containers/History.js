@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import NavigationBar from '../components/NavigationBar';
 import CakeChart from 'cake-chart';
+import TableTransaction from '../components/TableTransaction';
 
 const TREE = {
   value: 100,
@@ -44,7 +45,7 @@ export default class History extends Component {
     } else {
       this.setState({ selectedNode: node });
     }
-  }
+  };
 
   render() {
     return (
@@ -56,6 +57,7 @@ export default class History extends Component {
           ringWidth={100}
           ringWidthFactor={1}
           onClick={this.handleClick}/>
+        <TableTransaction />
       </div>
     );
   }
