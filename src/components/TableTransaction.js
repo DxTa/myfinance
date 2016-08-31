@@ -1,10 +1,13 @@
 import React, {PropTypes} from 'react';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 
+
 const TableTransaction = (props) => {
+    let styles = {width: '30%', display: "inline-block",  position: "absolute",
+        top: "50%", transform: "translateY(-50%)"};
     return (
-        <Table>
-            <TableHeader displaySelectAll={false}>
+        <Table wrapperStyle={styles}>
+            <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
                 <TableRow>
                     <TableHeaderColumn>Item</TableHeaderColumn>
                     <TableHeaderColumn>Price</TableHeaderColumn>

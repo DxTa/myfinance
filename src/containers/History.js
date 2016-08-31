@@ -51,13 +51,15 @@ export default class History extends Component {
     return (
       <div>
         <NavigationBar index={0} />
-        <CakeChart data={this.state.selectedNode}
-          style={{width: '50%'}}
-          coreRadius={200}
-          ringWidth={100}
-          ringWidthFactor={1}
-          onClick={this.handleClick}/>
-        <TableTransaction />
+        <div id="body">
+          <CakeChart data={this.state.selectedNode}
+                     style={{width: '50%', display: "inline-block"}}
+                     coreRadius={200}
+                     ringWidth={100}
+                     ringWidthFactor={1}
+                     onClick={this.handleClick}/>
+          <TableTransaction />
+        </div>
       </div>
     );
   }
