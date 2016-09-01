@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import NavigationBar from '../components/NavigationBar';
 import CakeChart from 'cake-chart';
 import TableTransaction from '../components/TableTransaction';
+import { fetchTransactions } from '../actions/transactions';
 
 const TREE = {
   value: 100,
@@ -29,13 +31,18 @@ function findParentNode(node, child, parent = null) {
   }
 }
 
-export default class History extends Component {
+class History extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       selectedNode: TREE
     }
+  }
+
+  componentDidMount() {
+    const { fetchTransactions } = this.props;
+    fetchTransactions();
   }
 
   handleClick = (node) => {
@@ -53,7 +60,7 @@ export default class History extends Component {
         <NavigationBar index={0} />
         <div id="body">
           <CakeChart data={this.state.selectedNode}
-                     style={{width: '50%', display: "inline-block"}}
+                     style={{width: '50%', display: 'inline-block'}}
                      coreRadius={200}
                      ringWidth={100}
                      ringWidthFactor={1}
@@ -64,3 +71,16 @@ export default class History extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    transactions: state.transactions
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  {
+    fetchTransactions
+  }
+)(History)
