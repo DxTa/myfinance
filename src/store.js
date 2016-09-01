@@ -9,7 +9,8 @@ import { loadState, saveState } from './localStorage';
 
 export function configureStore(history, initialState) {
 
-  const persistedState = loadState();
+  // const persistedState = loadState();
+  const persistedState = undefined;
 
   const reducer = combineReducers({
     ...reducers,
@@ -38,7 +39,7 @@ export function configureStore(history, initialState) {
   }
 
   store.subscribe(() => {
-    saveState(store.getState());
+    // saveState(store.getState());
     // saveState({
       // conversations: store.getState().conversations,
       // users: store.getState().users
